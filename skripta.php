@@ -13,6 +13,7 @@
             
             $imgDir = "img-index/";
             $uploadedImg = $imgDir . basename($_FILES["slika"]["name"]);
+            move_uploaded_file($_FILES["slika"]["tmp_name"], $uploadedImg);
             $slika = $uploadedImg;
             
     } else {
