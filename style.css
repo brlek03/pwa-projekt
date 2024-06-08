@@ -95,7 +95,7 @@ main {
 }
 
 .article {
-    background: #fff;
+    background: #f4f4f4;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -137,6 +137,10 @@ footer p {
 .footer-text {
     font-size: 0.9em;
     color: #ccc;
+}
+
+.news-article {
+    background: #f4f4f4;
 }
 
 .news-article h1 {
