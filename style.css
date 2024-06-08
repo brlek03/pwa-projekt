@@ -26,19 +26,29 @@ header .logo img {
     display: block;
     margin: 0 auto;
     padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+nav {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+    padding: 10px 0;
 }
 
 nav ul {
     list-style: none;
-    text-align: center;
-    margin: 20px 0;
-    border-bottom: 2px solid #ccc;
-    border-top: 2px solid #ccc;
+    display: flex; 
+    gap: 30px; 
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 150px; 
+    margin: 0 88px;
 }
 
 nav ul li a {
@@ -162,4 +172,47 @@ footer p {
 .news-article h2 {
     font-size: 1.2em;
     margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea,
+select,
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
 }
