@@ -7,7 +7,7 @@
         && isset($_POST['kategorija']) 
         && isset($_FILES['slika'])) {
             
-            $arhiva = 0;
+            $arhiva = 1;
             $naslov = $_POST['naslov'];
             $sazetak = $_POST['sazetak'];
             $kategorija =  $_POST['kategorija'];
@@ -19,7 +19,7 @@
             $slika = $uploadedImg;
 
             if (isset($_POST['prikazi'])) {
-                $arhiva = 1;
+                $arhiva = 0;
             }
 
             $insert = $dbc->prepare("INSERT INTO clanci (naslov, sazetak, tekst, kategorija, slika, arhiva) 
