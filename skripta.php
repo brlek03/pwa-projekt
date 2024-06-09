@@ -1,11 +1,13 @@
 <?php 
-    if (isset($_POST['prikazi']) 
-        && isset($_POST['naslov']) 
+    include "connect.php";
+
+    if (isset($_POST['naslov']) 
         && isset($_POST['sazetak']) 
         && isset($_POST['tekst'])
         && isset($_POST['kategorija']) 
         && isset($_FILES['slika'])) {
-
+            
+            $arhiva = 0;
             $naslov = $_POST['naslov'];
             $sazetak = $_POST['sazetak'];
             $kategorija =  $_POST['kategorija'];
@@ -15,6 +17,16 @@
             $uploadedImg = $imgDir . basename($_FILES["slika"]["name"]);
             move_uploaded_file($_FILES["slika"]["tmp_name"], $uploadedImg);
             $slika = $uploadedImg;
+
+            if (isset($_POST['prikazi'])) {
+                $arhiva = 1;
+            }
+
+            $insert = $dbc->prepare("INSERT INTO clanci (naslov, sazetak, tekst, kategorija, slika, arhiva) 
+                                    VALUES (?,?,?,?,?,?)");
+            $insert->bind_param("s,s,s,s,s,i", $naslov, $sazetak, $tekst, $kategorija, $slika, $arhiva);
+            $insert->execute();
+            $insert->close();
             
     } else {
         $message = "Greška: nepotpun obrazac.";
