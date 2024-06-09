@@ -1,3 +1,15 @@
+<?php 
+    include "connect.php";
+
+    $id = $_GET['id'];
+    $query = "SELECT * FROM clanci WHERE id = ?";
+    $stmt = $dbc->prepare($stmt);
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
