@@ -24,7 +24,7 @@
 
             $insert = $dbc->prepare("INSERT INTO clanci (naslov, sazetak, tekst, kategorija, slika, arhiva) 
                                     VALUES (?,?,?,?,?,?)");
-            $insert->bind_param("s,s,s,s,s,i", $naslov, $sazetak, $tekst, $kategorija, $slika, $arhiva);
+            $insert->bind_param("sssssi", $naslov, $sazetak, $tekst, $kategorija, $slika, $arhiva);
             $insert->execute();
             $insert->close();
             
@@ -49,7 +49,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="#">Elections</a></li>
                     <li><a href="#">Les JT</a></li>
                     <li><a href="unos.html">Unos</a></li>
