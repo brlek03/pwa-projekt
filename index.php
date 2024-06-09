@@ -1,8 +1,11 @@
 <?php 
     include "connect.php";
 
-    $query = "SELECT * FROM clanci WHERE arhiva = 0 ORDER BY datum desc;";
-    $result = $dbc->query($query);
+    $queryPolitika = "SELECT * FROM clanci WHERE kategorija = 'Politika' AND arhiva = 0 ORDER BY datum desc;";
+    $resultPolitika = $dbc->query($queryPolitika);
+
+    $querySport = "SELECT * FROM clanci WHERE kategorija = 'Sport' AND arhiva = 0 ORDER BY datum desc;";
+    $resultSport = $dbc->query($querySport);
 
 ?>
 <!DOCTYPE html>
@@ -32,9 +35,9 @@
     </header>
     <main class="container">
         <section class="news">
-            <h1>Udarne vijesti</h1>
+            <h1>Politika</h1>
             <div class="articles news">
-                <?php while ($row = $result->fetch_assoc()) : ?>
+                <?php while ($row = $resultPolitika->fetch_assoc()) : ?>
                 <article class="article">
                     <img src="<?php echo $row['slika']; ?>" alt="Vijest">
                     <p><?php echo $row['sazetak']; ?></p>
@@ -43,24 +46,14 @@
             </div>
         </section>
         <section class="jt">
-            <h1>Les JT</h1>
+            <h1>Sport</h1>
             <div class="articles jt">
+                <?php while ($row = $resultPolitika->fetch_assoc()) : ?>
                 <article class="article">
-                    <img src="img-index/weather-1.jpg" alt="JT Image">
-                    <p>JT de 8h du vendredi 17 mai 2019</p>
+                    <img src="<?php echo $row['slika']; ?>">
+                    <p><?php echo $row['sazetak']; ?></p>
                 </article>
-                <article class="article">
-                    <img src="img-index/weather-2.jpg" alt="JT Image">
-                    <p>Grand Soir 3 du jeudi 16 mai 2019</p>
-                </article>
-                <article class="article">
-                    <img src="img-index/weather-3.png" alt="JT Image">
-                    <p>JT de 20h du jeudi 16 mai 2019</p>
-                </article>
-                <article class="article">
-                    <img src="img-index/weather-4.jpg" alt="JT Image">
-                    <p>Le JT de 7h de franceinfo du vendredi 17 mai 2019</p>
-                </article>
+                <?php endwhile; ?>
             </div>
         </section>
     </main>
