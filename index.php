@@ -39,6 +39,7 @@
             <div class="articles news">
                 <?php while ($row = $resultPolitika->fetch_assoc()) : ?>
                 <article class="article">
+                    <a href="<?php echo 'clanak.php?id=' . $row['id']?>"><h1><?php echo $row['naslov'] ?></h1></a>
                     <img src="<?php echo $row['slika']; ?>" alt="Vijest">
                     <p><?php echo $row['sazetak']; ?></p>
                 </article>
@@ -50,6 +51,7 @@
             <div class="articles jt">
                 <?php while ($row = $resultSport->fetch_assoc()) : ?>
                 <article class="article">
+                    <a href="<?php echo 'clanak.php?id=' . $row['id']?>"><h1><?php echo $row['naslov'] ?></h1></a>
                     <img src="<?php echo $row['slika']; ?>">
                     <p><?php echo $row['sazetak']; ?></p>
                 </article>
