@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include "connect.php";
 
 $kategorija = $_GET['id'];
 $query = "SELECT * FROM clanci WHERE arhiva=0 AND kategorija=?";
@@ -26,8 +26,8 @@ $result = $stmt->get_result();
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Elections</a></li>
-                    <li><a href="#">Les JT</a></li>
+                    <li><a href="kategorija.php?id=Politika">Politika</a></li>
+                    <li><a href="kategorija.php?id=Sport">Sport</a></li>
                     <li><a href="unos.html">Unos</a></li>
                     <li><a href="#">Administration</a></li>
                 </ul>
