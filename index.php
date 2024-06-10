@@ -48,7 +48,7 @@
         <section class="jt">
             <h1>Sport</h1>
             <div class="articles jt">
-                <?php while ($row = $resultPolitika->fetch_assoc()) : ?>
+                <?php while ($row = $resultSport->fetch_assoc()) : ?>
                 <article class="article">
                     <img src="<?php echo $row['slika']; ?>">
                     <p><?php echo $row['sazetak']; ?></p>
