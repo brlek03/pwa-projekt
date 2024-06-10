@@ -2,7 +2,7 @@
     include "connect.php";
 
     $id = $_GET['id'];
-    $query = "SELECT * FROM clanci WHERE id = ?";
+    $stmt = "SELECT * FROM clanci WHERE id = ?";
     $stmt = $dbc->prepare($stmt);
     $stmt->bind_param('i', $id);
     $stmt->execute();
