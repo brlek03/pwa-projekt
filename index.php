@@ -24,9 +24,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Elections</a></li>
-                    <li><a href="#">Les JT</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="kategorija.php?id=Politika">Politika</a></li>
+                    <li><a href="kategorija.php?id=Sport">Sport</a></li>
                     <li><a href="unos.html">Unos</a></li>
                     <li><a href="#">Administration</a></li>
                 </ul>
