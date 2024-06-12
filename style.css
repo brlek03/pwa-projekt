@@ -221,3 +221,16 @@ button:hover {
     color: #ff0000;
 }
 
+.articles.admin {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.articleadmin {
+    flex: 1 1 300px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+
