@@ -40,6 +40,7 @@ $result = $stmt->get_result();
             <div class="articles news">
                 <?php while ($row = $result->fetch_assoc()): ?>
                 <article class="article">
+                    <a href="<?php echo 'clanak.php?id=' . $row['id']?>"><h1><?php echo $row['naslov'] ?></h1></a>
                     <img src="<?php echo $row['slika']; ?>" alt="News Image">
                     <p><?php echo $row['sazetak']; ?></p>
                 </article>
