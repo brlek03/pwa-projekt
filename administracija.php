@@ -2,7 +2,6 @@
 session_start();
 include 'connect.php';
 
-// Obrada prijave korisnika
 if (isset($_POST['prijava'])) {
     $prijavaUsername = $_POST['username'];
     $prijavaPassword = $_POST['lozinka'];
@@ -20,12 +19,12 @@ if (isset($_POST['prijava'])) {
         $_SESSION['level'] = $level;
 
         if ($level != 1) {
-            echo "<p> Niste administrator.</p>";
+            echo "Nemate administratorske ovlasti";
             $stmt->close();
             exit();
         }
     } else {
-        echo "<p> Pogrešno ime ili lozinka.</p>";
+        echo "Pogrešno ime ili lozinka";
         $stmt->close();
         exit();
     }
@@ -204,9 +203,9 @@ if (isset($_SESSION['username']) && $_SESSION['level'] == 1) {
             <h1>Prijava</h1>
             <form name='prijava' method="POST">
                 <label for="username">Korisničko ime:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username">
                 <label for="lozinka">Lozinka:</label>
-                <input type="password" id="lozinka" name="lozinka" required>
+                <input type="password" id="lozinka" name="lozinka">
                 <button type="submit" name="prijava">Prijava</button>
             </form>
             <br>
