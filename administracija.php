@@ -98,8 +98,8 @@ if (isset($_SESSION['username']) && $_SESSION['level'] == 1) {
                 <h1>Administracija članaka</h1>
                 <div class="articles admin">
                     <?php while ($row = $result->fetch_assoc()): ?>
-                    <form action="administracija.php" method="POST" enctype="multipart/form-data">
-                        <article class="article">
+                    <form class="articleadmin" action="administracija.php" method="POST" enctype="multipart/form-data">
+                        <article class="articleadmin">
                             <div>
                                 <label for="naslov">Naslov:</label>
                                 <input type="text" name="naslov" value="<?php echo htmlspecialchars($row['naslov']); ?>" required>
